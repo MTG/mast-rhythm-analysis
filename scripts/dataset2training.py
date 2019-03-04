@@ -14,13 +14,13 @@ def generate_training_set_from_assignments(dataset_path):
                 if assignment is not None:
                     _fetch_distance_entries_for_assignment(dataset_path, reference, assignment)
 
-def _fetch_distance_entries_for_assignment(dataset_path, reference, assignment):     
+def _fetch_distance_entries_for_assignment(dataset_path, reference, assignment):
     signal_reference = _load_file_as_monophonic_waveform(os.path.join(dataset_path, reference))
     signal_assignment = _load_file_as_monophonic_waveform(os.path.join(dataset_path, assignment))
 
     signals = [signal_reference, signal_assignment]
 
-    onset_vectors = [_extract_onset_vectors(signal_reference), _extract_onset_vectors(signal_assignment)]        
+    onset_vectors = [_extract_onset_vectors(signal_reference), _extract_onset_vectors(signal_assignment)]
 
     # TODO Check if reference and student performance
     # have the same number of beats and apply noise
@@ -32,7 +32,7 @@ def _fetch_distance_entries_for_assignment(dataset_path, reference, assignment):
 
 def _load_file_as_monophonic_waveform(file_path):
     fs = 44100
-    
+
     x = MonoLoader(filename = file_path, sampleRate = fs)()
     return x/np.max(np.abs(x))
 
@@ -48,7 +48,7 @@ def _extract_onset_vectors(waveform):
     pool = Pool()
     for frame in FrameGenerator(waveform, frameSize = window_size, hopSize = hop_size):
         mag, phase, = c2p(fft(w(frame)))
-        pool.add('features', od_hfc(mag, phase))     
+        pool.add('features', od_hfc(mag, phase))
 
     onsets = onsets(array([pool['features']]),[1])
     return onsets

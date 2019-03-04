@@ -58,7 +58,7 @@ def m4a_2_wav(input, output):
 if __name__ == "__main__":
     passed_performances = []
     rejected_performances = []
-    for (dirpath, dirnames, filenames) in os.walk('Merged Performances - 80 Samples - Pattern Balanced/'):
+    for (dirpath, dirnames, filenames) in os.walk('../data/Merged Performances - 80 Samples - Pattern Balanced/'):
         for filename in filenames:
             if 'pass' in filename:
                 passed_performances.append(filename)
@@ -66,10 +66,10 @@ if __name__ == "__main__":
                 rejected_performances.append(filename)
     with open('listperformances','w') as listperformances:
         with open('listreferences','w') as listreferences:
-            # accepted peformances
+            # accepted performances
             for performance in passed_performances:
                 listperformances.write('%s\n' % performance)
-                copy('Full Dataset/%s.m4a' % performance.split(".")[0], 'Only Performances/')
+                m4a_2_wav('../data/Full Dataset/%s.m4a' % performance.split(".")[0], '../data/Only Performances/%s' % performance)
 
                 search_groups = re.search(PATTERN, performance)
                 question_set = search_groups.group(1)
@@ -78,12 +78,12 @@ if __name__ == "__main__":
                 best_reference = REFERENCE_MAPPING[(int(question_set), int(question_number))]
                 listreferences.write('%s.wav\n' % best_reference.split(".")[0])
 
-                m4a_2_wav('Full Dataset/%s.m4a' % best_reference.split(".")[0], 'Only References/%s.wav' % best_reference.split(".")[0])
+                m4a_2_wav('../data/Full Dataset/%s.m4a' % best_reference.split(".")[0], '../data/Only References/%s.wav' % best_reference.split(".")[0])
 
             # rejected peformances
             for performance in rejected_performances:
                 listperformances.write('%s\n' % performance)
-                copy('Full Dataset/%s.m4a' % performance.split(".")[0], 'Only Performances/')
+                m4a_2_wav('../data/Full Dataset/%s.m4a' % performance.split(".")[0], '../data/Only Performances/%s' % performance)
 
                 search_groups = re.search(PATTERN, performance)
                 question_set = search_groups.group(1)
@@ -92,4 +92,4 @@ if __name__ == "__main__":
                 best_reference = REFERENCE_MAPPING[(int(question_set), int(question_number))]
                 listreferences.write('%s.wav\n' % best_reference.split(".")[0])
 
-                m4a_2_wav('Full Dataset/%s.m4a' % best_reference.split(".")[0], 'Only References/%s.wav' % best_reference.split(".")[0])
+                m4a_2_wav('../data/Full Dataset/%s.m4a' % best_reference.split(".")[0], '../data/Only References/%s.wav' % best_reference.split(".")[0])
