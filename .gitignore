@@ -2,4 +2,11 @@ Custom .gitignore file
 
 notebooks/.ipynb_checkpoints/
 data/
+Experiment Data/
+Full Dataset/
+scripts/
+venv/
+.vscode/
+
+annotation_mapper.txt
 *.pyc
