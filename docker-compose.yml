@@ -8,4 +8,3 @@ services:
       - .:/notebooks
     environment:
       - JUPYTER_USER_ID=$JUPYTER_USER_ID
-
