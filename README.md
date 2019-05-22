@@ -1,6 +1,10 @@
 # MAST Rhythmic Analysis 
 
-This repository contains a set of Jupyter notebooks that will guide us through some analysis over the MAST Rhythmic Dataset.  To run the notebooks, you will need to install docker and run the Jupyter server available in the docker image.
+This repository contains a set of Jupyter notebooks that will guide us through some analysis over the MAST Rhythmic Dataset. A more detailed discussion regarding the results listed in the these notebooks can be checked in the paper _A dataset of rhythmic pattern reproductions and baseline automatic assessment system_, submitted to ISMIR 2019.
+
+The proposed analysis is fed by data from both the full [MAST rhythm dataset](https://zenodo.org/record/2620357#.XOXfT3UzZuQ) and its [re-annotated subset](https://zenodo.org/record/2619499)
+
+To run the notebooks, you will need to install docker and run the Jupyter server available in the docker image.
 
 ## Instructions
 
