@@ -1,6 +1,16 @@
 # MAST Rhythmic Analysis 
 
-This repository contains a set of Jupyter notebooks that will guide us through some analysis over the MAST Rhythmic Dataset. A more detailed discussion regarding the results listed in the these notebooks can be checked in the paper _A dataset of rhythmic pattern reproductions and baseline automatic assessment system_, submitted to ISMIR 2019.
+This repository contains a set of Jupyter notebooks that will guide us through some analysis over the MAST Rhythmic Dataset. A more detailed discussion regarding the results listed in the these notebooks can be checked in the paper 
+
+> F. Falcao, B. Bozkurt, X. Serra, N. Andrade, O. Baysal, A Dataset of Rhythmic Patterns Reproductions and Baseline Automatic Assessment System, Proc. ISMIR (International Society for Music Information Retrieval Conference), 4-8 Nov., Delft, 2019.
+```
+@inproceedings{inproceedings,
+  author={Falcao, F., Bozkurt, B., Serra, X., Andrade, N., Baysal, O.},
+  title={A Dataset of Rhythmic Patterns Reproductions and Baseline Automatic Assessment System},
+  year={2019},
+  booktitle={Proc. of the International Society for Music Information Retrieval Conference, ISMIR 2019}
+}
+```
 
 The proposed analysis is fed by data from both the full [MAST rhythm dataset](https://zenodo.org/record/2620357#.XOXfT3UzZuQ) and its [re-annotated subset](https://zenodo.org/record/2619499)
 
@@ -36,3 +46,5 @@ The first time you run this command it will download the required docker images 
 `docker-compose pull`
 
 Then, you can access the notebooks from the browser and run them. All the notebooks contain their user guides, but you must to make sure to run them in a specific order, since one notebook might use outputs from a previous notebook. The correct sequence is: _DownloadDataFromMASTDataset.ipynb_ -> _PreProcessDataFromMASTDataset.ipynb_ -> _BaselineRhythmicAssessmentSystem.ipynb_
+
+Please cite the publication mentioned above if you use this baseline system or the dataset in your work.
