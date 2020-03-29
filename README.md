@@ -1,6 +1,6 @@
 # MAST Rhythmic Analysis 
 
-This repository contains a set of Jupyter notebooks that will guide us through some analysis over the MAST Rhythmic Dataset. A more detailed discussion regarding the results listed in the these notebooks can be checked in the paper 
+This repository contains a set of Jupyter notebooks that will guide us through some analysis over the MAST Rhythmic Dataset. A more detailed discussion regarding the results listed in these notebooks can be checked in the paper 
 
 > F. Falcao, B. Bozkurt, X. Serra, N. Andrade, O. Baysal, A Dataset of Rhythmic Patterns Reproductions and Baseline Automatic Assessment System, Proc. ISMIR (International Society for Music Information Retrieval Conference), 4-8 Nov., Delft, 2019.
 ```
